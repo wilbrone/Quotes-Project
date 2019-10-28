@@ -8,13 +8,20 @@
 .myname{
   width: 25%;
 }
-.publish{
+.example-container{
+  margin-bottom: 100em;
+}
+.frm{
+  /* height: 70%; */
+}
+mat-card{
+  text-align: center;
 }
 .disp{
-  width: 30%;
+  width: 40%;
   margin-top: 50px;
-  /* margin-right: 20px; */
-  /* margin-left: 20px;  */
+  margin-right: 20px;
+  margin-left: 20px; 
 }
 #dps{
   display: flex;

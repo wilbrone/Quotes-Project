@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Directive,ElementRef,HostListener } from '@angular/core';
 
 
@@ -7,19 +7,24 @@ import { Directive,ElementRef,HostListener } from '@angular/core';
   templateUrl: './quotes.component.html',
   styleUrls: ['./quotes.component.css']
 })
-export class QuotesComponent implements OnInit { 
+
+
+export class QuotesComponent implements OnInit, AfterViewInit { 
 
   show:boolean = true;
-  // initialCount: number = 0;
+       
 
-  // @Input() count: number = 0;
+  constructor(private el: ElementRef) { 
+  }
 
-  constructor() { }
 
   quotation: Quatation[] = [
-    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false, upCount:0, downCount:0},
-    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false, upCount:0, downCount:0}
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false, upCount:6, downCount:0},
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false, upCount:0, downCount:3}
   ];
+
+ 
+
 
 // FOR THE UP AND DOWNCOUNT
   increment(param) {
