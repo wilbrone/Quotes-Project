@@ -1,16 +1,33 @@
 <div>
   <mat-card class="example-card">
-    <div class="example-container container" style="border:solid;">
+    <form class="example-container container" #userInput ="ngForm" (ngSubmit)="onSubmitting(userInput.value)">
       <mat-form-field class="txtarea">
-        <textarea matInput placeholder="Type your Quote here..."></textarea>
+        <textarea matInput placeholder="Type your Quote here..." type="text" id="quote" name="quote" ngModel></textarea>
+        <!-- <textarea matInput placeholder="Type your Quote here..." type="text" id="quote" name="quote" [(ngModel)]="quotation.quote"></textarea> -->
       </mat-form-field>
       <br>
       <mat-form-field class="author">
-        <input matInput placeholder="Author">
+        <input matInput placeholder="Author" type="text" id="author" name="author" ngModel>
+        <!-- <input matInput placeholder="Author" type="text" id="author" name="author" [(ngModel)]="quotation.author"> -->
       </mat-form-field>
       <mat-form-field class="myname">
-        <input matInput placeholder="Your Name">
+        <input matInput placeholder="Your Name" type="text" id="name" name="name" ngModel>
+        <!-- <input matInput placeholder="Your Name" type="text" id="name" name="name" [(ngModel)]="quotation.name"> -->
       </mat-form-field>
-    </div>
+      <br>
+      <!-- submiting button -->
+      <button mat-raised-button color="primary" type="submit" value = "submit" class="publish">Publish</button>
+    </form>
+
+
+   <!--  <div>
+      <div [count]="initialCount"></div>
+    </div> -->
   </mat-card>
 </div>  
+
+
+
+<!-- [(ngModel)]="" -->
+<!-- [(ngModel)]="" -->
+<!-- [(ngModel)]="" -->

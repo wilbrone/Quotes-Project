@@ -1,9 +1,12 @@
 .txtarea{
-  width: 50%;
+  width: 60%;
 }
 .author{
-
+  width: 25%;
+  margin-right: 110px;
 }
 .myname{
-  
+  width: 25%;
+}
+.publish{
 }
