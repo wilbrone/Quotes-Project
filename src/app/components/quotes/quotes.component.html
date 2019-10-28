@@ -24,6 +24,12 @@
       <div [count]="initialCount"></div>
     </div> -->
   </mat-card>
+
+  <div class="container" *ngFor="let qt of quotation">
+    Author: &nbsp; {{ qt.author }}
+    <br>
+    Quote: &nbsp; <em>"{{ qt.quote | slice:0:17 }}..."</em>    
+  </div>
 </div>  
 
 

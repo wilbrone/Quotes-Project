@@ -11,10 +11,10 @@ export class QuotesComponent implements OnInit {
 
 
   constructor() { }
-  // quotation:Quatation = new Quatation(quotation.quote);
-  quotation: Quatation[] = [];
+  quotation: Quatation[] = [
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man"}
+  ];
 
-  // new_quotation = new Quatation();
 
   onSubmitting(data) {
     console.log(data);
