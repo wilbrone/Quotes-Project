@@ -9,7 +9,7 @@ import { Directive,ElementRef,HostListener } from '@angular/core';
 })
 
 
-export class QuotesComponent implements OnInit, AfterViewInit { 
+export class QuotesComponent implements OnInit { 
 
   show:boolean = true;
        

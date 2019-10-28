@@ -28,11 +28,11 @@
       <!-- <mat-card *ngIf = "appHighlight"> -->
       <mat-card [ngStyle]="qt.upCount>=5?{'background-color': 'yellow'} : {'background-color': 'white'}">
       <!-- <mat-card [ngStyle]="{'background': isBlue ? 'blue' : 'red'}"> -->
-        Author: &nbsp; {{ qt.author }}
+        <strong>Author:</strong> &nbsp; {{ qt.author }}
         <br>
-        Quote: &nbsp; <em>"{{ qt.quote | slice:0:17 }}..."</em>
+        <strong>Quote:</strong> &nbsp; <em>"{{ qt.quote | slice:0:17 }}..."</em>
         <br>
-        <button  mat-button color="primary" (click)='toggleDetails(i)'>Details</button>
+        <button  mat-button color="primary" (click)='toggleDetails(i)'><u>Details</u></button>
 
 
         <div *ngIf='qt.showDetails'>

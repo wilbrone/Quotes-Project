@@ -15,14 +15,14 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { AppComponent } from './app.component';
 import { QuotesComponent } from './components/quotes/quotes.component';
 import { QuoteDetailsComponent } from './components/quote-details/quote-details.component';
-import { HighlightDirective } from './Directives/highlight.directive';
+import { DateCountPipe } from './shared/date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotesComponent,
     QuoteDetailsComponent,
-    HighlightDirective
+    DateCountPipe,
   ],
   imports: [
     BrowserModule,
