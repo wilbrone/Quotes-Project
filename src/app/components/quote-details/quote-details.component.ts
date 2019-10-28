@@ -9,7 +9,7 @@ import { Quatation } from '.././quotes/quotes.component';
 })
 export class QuoteDetailsComponent implements OnInit {
 
-  @Input() quotation: any[];
+  @Input() quotation: Quatation;
   @Output() isDelete = new EventEmitter<boolean>();
 
   
