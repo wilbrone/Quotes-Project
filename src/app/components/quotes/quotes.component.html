@@ -30,17 +30,31 @@
         <br>
         Quote: &nbsp; <em>"{{ qt.quote | slice:0:17 }}..."</em>
         <br>
-        <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+        <button  mat-button color="primary" (click)='toggleDetails(i)'>Details</button>
 
 
         <div *ngIf='qt.showDetails'>
           <app-quote-details [quotation]='qt' (isDelete)="delQuote($event,i)"></app-quote-details>
-        </div>    
+        </div>
+        <br>
+
+
+        <!-- FOR THE UPCOUNT AND DOUWNCOUNT  -->
+         <mat-icon matBadge="{{qt.upCount}}" matBadgeColor="warn" class="badge" (click)="increment(i)">thumb_up_alt</mat-icon>
+        <!-- Include text description of the icon's meaning for screen-readers -->
+        <span class="cdk-visually-hidden">
+          Example with a home icon with overlaid badge showing the number 15
+        </span>  
+
+
+        <mat-icon matBadge="{{qt.downCount}}" matBadgeColor="warn" class="badge" (click)="decrement(i)">thumb_down_alt</mat-icon>
+        <!-- Include text description of the icon's meaning for screen-readers -->
+        <span class="cdk-visually-hidden">
+          Example with a home icon with overlaid badge showing the number 15
+        </span>    
       </mat-card>
     </div>
   </div>
-      
-
 </div>  
 
 

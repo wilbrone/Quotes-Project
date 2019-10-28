@@ -9,17 +9,33 @@ import { Directive,ElementRef,HostListener } from '@angular/core';
 })
 export class QuotesComponent implements OnInit { 
 
+  show:boolean = true;
+  // initialCount: number = 0;
+
+  // @Input() count: number = 0;
 
   constructor() { }
+
   quotation: Quatation[] = [
-    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false},
-    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false}
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false, upCount:0, downCount:0},
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false, upCount:0, downCount:0}
   ];
 
+// FOR THE UP AND DOWNCOUNT
+  increment(param) {
+    console.log(param);
+    this.quotation[param].upCount++;
+  }
+
+  decrement(data) {
+    console.log(data);
+    this.quotation[data].downCount++;
+  }
 
   onSubmitting(data) {
     console.log(data);
-
+    data.upCount = 0;
+    data.downCount = 0;
     this.quotation.push(data);
     console.log(this.quotation);
 
@@ -30,6 +46,7 @@ export class QuotesComponent implements OnInit {
   toggleDetails(param){
     console.log(param);
     this.quotation[param].showDetails = !this.quotation[param].showDetails;
+
   };
 
   delQuote(isDelete, param){
@@ -54,5 +71,7 @@ export class Quatation{
   author: string;
   name: string;
   quote: string;
-  showDetails: boolean
+  showDetails: boolean;
+  upCount: number;
+  downCount: number;
 }

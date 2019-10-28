@@ -19,3 +19,7 @@
 #dps{
   display: flex;
 }
+.badge{
+  margin-top: 30px;
+  width: 4em;
+}

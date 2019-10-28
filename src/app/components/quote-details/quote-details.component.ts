@@ -12,8 +12,12 @@ export class QuoteDetailsComponent implements OnInit {
   @Input() quotation: any[];
   @Output() isDelete = new EventEmitter<boolean>();
 
+  
 
   constructor() { }
+
+
+  
 
   quoteDelete(deletes:boolean){
     this.isDelete.emit(deletes);
