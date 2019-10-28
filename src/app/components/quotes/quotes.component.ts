@@ -12,7 +12,8 @@ export class QuotesComponent implements OnInit {
 
   constructor() { }
   quotation: Quatation[] = [
-    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man"}
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false},
+    {quote:"try my name today for the sake of it", name:"wil", author:"Chap Man", showDetails:false}
   ];
 
 
@@ -25,14 +26,33 @@ export class QuotesComponent implements OnInit {
     event.preventDefault();
   }
 
+
+  toggleDetails(param){
+    console.log(param);
+    this.quotation[param].showDetails = !this.quotation[param].showDetails;
+  };
+
+  delQuote(isDelete, param){
+    if (isDelete) {
+      let toDelete = confirm(`Are you sure you want to delete this qoute by ${this.quotation[param].name}?`)
+
+      this.quotation[param].showDetails = false;
+
+      if (toDelete){
+        this.quotation.splice(param,1)
+      }
+    }
+  }
+
   ngOnInit() {
   }
 
 }
 
 
-export interface Quatation{
+export class Quatation{
   author: string;
   name: string;
-  quote: string
+  quote: string;
+  showDetails: boolean
 }

@@ -3,18 +3,16 @@
     <form class="example-container container" #userInput ="ngForm" (ngSubmit)="onSubmitting(userInput.value)">
       <mat-form-field class="txtarea">
         <textarea matInput placeholder="Type your Quote here..." type="text" id="quote" name="quote" ngModel></textarea>
-        <!-- <textarea matInput placeholder="Type your Quote here..." type="text" id="quote" name="quote" [(ngModel)]="quotation.quote"></textarea> -->
       </mat-form-field>
       <br>
       <mat-form-field class="author">
         <input matInput placeholder="Author" type="text" id="author" name="author" ngModel>
-        <!-- <input matInput placeholder="Author" type="text" id="author" name="author" [(ngModel)]="quotation.author"> -->
       </mat-form-field>
       <mat-form-field class="myname">
         <input matInput placeholder="Your Name" type="text" id="name" name="name" ngModel>
-        <!-- <input matInput placeholder="Your Name" type="text" id="name" name="name" [(ngModel)]="quotation.name"> -->
       </mat-form-field>
       <br>
+
       <!-- submiting button -->
       <button mat-raised-button color="primary" type="submit" value = "submit" class="publish">Publish</button>
     </form>
@@ -25,11 +23,24 @@
     </div> -->
   </mat-card>
 
-  <div class="container" *ngFor="let qt of quotation">
-    Author: &nbsp; {{ qt.author }}
-    <br>
-    Quote: &nbsp; <em>"{{ qt.quote | slice:0:17 }}..."</em>    
+  <div class="container">
+    <div class="container row" id="dps" *ngFor="let qt of quotation;let i = index">
+      <mat-card class="disp">
+        Author: &nbsp; {{ qt.author }}
+        <br>
+        Quote: &nbsp; <em>"{{ qt.quote | slice:0:17 }}..."</em>
+        <br>
+        <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+
+
+        <div *ngIf='qt.showDetails'>
+          <app-quote-details [quotation]='qt' (isDelete)="delQuote($event,i)"></app-quote-details>
+        </div>    
+      </mat-card>
+    </div>
   </div>
+      
+
 </div>  
 
 
